@@ -22,7 +22,7 @@ docker run -it --rm \
   -v "$HOST_BASE_DIR/state:/home/ubuntu/.local/state/nvim" \
   -v "$HOST_BASE_DIR/cache:/home/ubuntu/.cache/nvim" \
   -v "$HOST_BASE_DIR/opt:/opt" \
-  ubuntu:latest \
+  neovim_new_config_test \
   bash -c '
     set -e
     # Add Neovim nightly to PATH if it exists
