@@ -31,7 +31,7 @@ docker run -it --rm \
     fi
 
     echo "Neovim version inside container:"
-    nvim --version || echo "Neovim not found in /opt/nvim-linux-x86_64/bin"
+    nvim --version || ( echo "Neovim not found in /opt/nvim-linux-x86_64/bin"; exit 1 )
 
     exec bash
   '
