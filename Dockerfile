@@ -4,6 +4,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get -y update && \
     apt-get install --no-install-recommends -y \
-    git
+    git \
+    ca-certificates
 
 WORKDIR /home/ubuntu

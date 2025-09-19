@@ -23,4 +23,3 @@ vim.opt.splitbelow = true
 
 -- mouse
 vim.opt.mouse = ""
-

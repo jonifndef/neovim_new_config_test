@@ -1,3 +1,3 @@
 vim.pack.add({
-    { src = 'ellisonleao/gruvbox.nvim' },
+    { src = 'https://github.com/ellisonleao/gruvbox.nvim.git' },
 })
