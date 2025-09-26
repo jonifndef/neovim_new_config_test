@@ -1,2 +1,4 @@
 require("configs.general")
-require("configs.pack")
+require("plugins.treesitter")
+require("plugins.gruvbox")
+require("plugins.telescope")
