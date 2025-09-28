@@ -7,7 +7,12 @@ RUN apt-get -y update && \
     build-essential \
     ca-certificates \
     curl \
-    git
+    git \
+    unzip
+
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && \
+    apt-get install --no-install-recommends -y nodejs && \
+    npm install -g npm@latest
 
 RUN (getent group 1000 || groupadd -g 1000 ubuntu) && \
     (getent passwd 1000 || useradd -m -u 1000 -g 1000 -s /bin/bash ubuntu || true) && \
