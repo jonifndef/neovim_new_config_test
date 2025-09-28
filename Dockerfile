@@ -9,9 +9,10 @@ RUN apt-get -y update && \
     curl \
     git
 
-#RUN groupadd -g 1000 ubuntu && useradd ubuntu -u 1000 -g 1000 -m -s /bin/bash
-
-#RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash; \. "/home/ubuntu/.nvm/nvm.sh"; nvm install 22
+RUN (getent group 1000 || groupadd -g 1000 ubuntu) && \
+    (getent passwd 1000 || useradd -m -u 1000 -g 1000 -s /bin/bash ubuntu || true) && \
+    mkdir -p /home/ubuntu && \
+    chown -R 1000:1000 /home/ubuntu || true
 
 USER ubuntu
 
