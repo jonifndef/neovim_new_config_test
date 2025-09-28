@@ -7,8 +7,14 @@ RUN apt-get -y update && \
     build-essential \
     ca-certificates \
     curl \
-    git \
-    unzip
+    gnupg \
+    software-properties-common \
+    unzip \
+    wget
+
+RUN add-apt-repository ppa:git-core/ppa -y && \
+    apt-get update && \
+    apt-get install -y git
 
 RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && \
     apt-get install --no-install-recommends -y nodejs && \
