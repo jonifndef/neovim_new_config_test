@@ -8,3 +8,8 @@ require "blink.cmp".setup({
     },
     signature = { enabled = true }
 })
+
+-- in order to solve the Ctrl-p issue in completion, add a ~/.docker/config.json with the following contents:
+-- {
+--     "detachKeys": "ctrl-e,e"
+-- }
