@@ -1,8 +1,11 @@
 require("configs.general")
+require("configs.mappings")
+
 require("plugins.treesitter")
 require("plugins.gruvbox")
 require("plugins.telescope")
 require("plugins.mason")
+require("plugins.blink")
 
 vim.lsp.enable(
 	{
