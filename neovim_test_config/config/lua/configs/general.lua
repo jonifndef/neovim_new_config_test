@@ -4,6 +4,7 @@ vim.opt.relativenumber = true
 vim.opt.linebreak = true
 vim.opt.scrolloff = 5
 vim.opt.cursorline = true
+vim.opt.winborder = "rounded"
 --vim.opt.signcolumn = 'yes'
 
 -- Searching
