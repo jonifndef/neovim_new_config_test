@@ -1,6 +1,7 @@
 require("configs.general")
 require("configs.mappings")
 
+require("plugins.nvim-web-devicons")
 require("plugins.treesitter")
 require("plugins.gruvbox")
 require("plugins.telescope")
