@@ -1,12 +1,18 @@
 vim.pack.add({
-    { src = "https://github.com/Saghen/blink.cmp.git" },
+    { src = "https://github.com/Saghen/blink.cmp.git",
+    version = vim.version.range('1.*'), },
 })
 
 require "blink.cmp".setup({
     completion = {
         documentation = { auto_show = true, auto_show_delay_ms = 500 },
     },
-    signature = { enabled = true }
+    signature = { enabled = true },
+    fuzzy = { implementation = "rust" },
+    sources = {
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
+    },
+
 })
 
 vim.cmd("highlight Pmenu guibg=NONE")
