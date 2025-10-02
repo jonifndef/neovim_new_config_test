@@ -7,11 +7,4 @@ require("plugins.gruvbox")
 require("plugins.telescope")
 require("plugins.mason")
 require("plugins.blink")
-
-vim.lsp.enable(
-	{
-		"lua_ls",
-		"rust_analyzer",
-		"clangd",
-	}
-)
+require("configs.lsp_settings")
