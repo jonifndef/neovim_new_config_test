@@ -1,3 +1,5 @@
 neovim_test_config/opt
 neovim_test_config/state
 neovim_test_config/data/
+neovim_test_config/cache/
+neovim_test_config/config/test_project
