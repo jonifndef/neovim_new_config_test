@@ -28,10 +28,10 @@ end
 
 vim.lsp.enable(servers)
 
---vim.lsp.enable(
---	{
---		"lua_ls",
---		"rust_analyzer",
---		"clangd",
---	}
---)
+vim.api.nvim_create_autocmd("CursorHold", {
+  callback = function()
+    vim.diagnostic.open_float(nil, { focus = false })
+  end,
+})
+
+vim.o.updatetime = 200
