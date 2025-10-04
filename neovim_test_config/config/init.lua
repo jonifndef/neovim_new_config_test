@@ -10,5 +10,5 @@ require("plugins.blink")
 require("plugins.lualine")
 require("plugins.nvim-tree")
 
+require("configs.trailing-whitespace")
 require("configs.lsp_settings")
-
