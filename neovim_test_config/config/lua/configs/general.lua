@@ -25,3 +25,6 @@ vim.opt.splitbelow = true
 
 -- mouse
 vim.opt.mouse = ""
+
+-- Spellcheck
+vim.opt.spelllang = "en_us"
