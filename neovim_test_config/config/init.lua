@@ -9,6 +9,7 @@ require("plugins.mason")
 require("plugins.blink")
 require("plugins.lualine")
 require("plugins.nvim-tree")
+require("plugins.treesitter-context")
 
 require("configs.trailing-whitespace")
 require("configs.lsp_settings")

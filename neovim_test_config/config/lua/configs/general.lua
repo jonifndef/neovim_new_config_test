@@ -5,7 +5,8 @@ vim.opt.linebreak = true
 vim.opt.scrolloff = 5
 vim.opt.cursorline = true
 vim.opt.winborder = "rounded"
-vim.opt.cmdheight = 0
+-- would like to have 0 here, but that breaks telescope (for now)
+vim.opt.cmdheight = 1
 --vim.opt.signcolumn = 'yes'
 
 -- Searching
