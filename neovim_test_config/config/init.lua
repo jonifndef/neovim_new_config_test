@@ -10,6 +10,13 @@ require("plugins.blink")
 require("plugins.lualine")
 require("plugins.nvim-tree")
 require("plugins.treesitter-context")
+require("plugins.luasnip")
 
 require("configs.trailing-whitespace")
 require("configs.lsp_settings")
+
+-- todo:
+-- add snippets
+-- vscode tasks plugin
+-- floating, toggle terminal
+-- DAP

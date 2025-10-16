@@ -31,6 +31,10 @@ vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>", { silent = true })
 vim.keymap.set("v", "<Leader>y", '"+y')
 vim.keymap.set("n", "<Leader>p", '"+p')
 
+-- spellcheck
 vim.keymap.set('n', "<leader>sc", function()
     vim.opt.spell = not(vim.opt.spell:get())
 end)
+
+-- terminal
+vim.keymap.set('n', "<esc><esc>", "C-\\C-n")
