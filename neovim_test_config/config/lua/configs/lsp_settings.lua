@@ -2,30 +2,33 @@
 local servers = {
     "lua_ls",
     "rust_analyzer",
-    "clangd"
+    "clangd",
+    "pyright"
 }
+
+vim.lsp.enable(servers)
 
 local telescope = require("telescope.builtin")
 
-local common_keys = {
-  { "n", "gd", telescope.lsp_definitions, desc = "Goto definition" },
-  { "n", "gr", telescope.lsp_references,  desc = "Goto references" },
-  { "n", "gD", vim.lsp.buf.declaration,   desc = "Goto declaration" },
-  { "n", "gi", vim.lsp.buf.implementation,desc = "Goto implementation" },
-  { "n", "<Leader>gD", vim.lsp.buf.type_definition, desc = "Type definition" },
-  { "n", "<Leader>K",  vim.lsp.buf.hover, desc = "Hover" },
-  { "n", "<Leader>rn", vim.lsp.buf.rename, desc = "Rename symbol" },
-  { "n", "<Leader>co", vim.lsp.buf.code_action, desc = "Code action" },
-  { "n", "<Leader>fo", vim.lsp.buf.format, desc = "Format buffer" },
-}
-
-for _, server in ipairs(servers) do
-  vim.lsp.config[server] = {
-    keys = common_keys,
-  }
+local function set_lsp_keymaps(bufnr)
+  local opts = { silent = true, buffer = bufnr }
+  vim.keymap.set("n", "gd", telescope.lsp_definitions, opts)
+  vim.keymap.set("n", "gr", telescope.lsp_references, opts)
+  vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+  vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+  vim.keymap.set("n", "<Leader>gD", vim.lsp.buf.type_definition, opts)
+  vim.keymap.set("n", "<Leader>K",  vim.lsp.buf.hover, opts)
+  vim.keymap.set("n", "<Leader>rn", vim.lsp.buf.rename, opts)
+  vim.keymap.set("n", "<Leader>co", vim.lsp.buf.code_action, opts)
+  vim.keymap.set("n", "<Leader>fo", vim.lsp.buf.format, opts)
 end
 
-vim.lsp.enable(servers)
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local bufnum = args.buf
+    set_lsp_keymaps(bufnum)
+  end,
+})
 
 -- Diagnostics
 vim.api.nvim_create_autocmd("CursorHold", {
